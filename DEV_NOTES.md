@@ -14,7 +14,7 @@ Single standalone HTML file study app for the CompTIA Security+ SY0-701 exam. No
 
 ---
 
-## Current State (STATE_VERSION 47)
+## Current State (STATE_VERSION 48)
 
 - **907 MCQ questions** across 5 SY0-701 domains, drawn from 3 source PDFs, deduplicated
 - **403 vocabulary flashcards**
@@ -80,6 +80,7 @@ Single `render()` -> `_renderInner(container)` function. All UI built in JS, no 
 - No hard nav lock during exams - persistent banner + state restore is the mechanism
 - Prev button available in no-feedback exam mode (intentional)
 - `vocabStruggling` localStorage key must not be renamed (would break existing saved state)
+- Timer reset scope differs by reset type: Reset Everything wipes the timer to full defaults (count-up, 0, target 5400, not running) since it simulates a clean first-load state. The lighter practice resets (Reshuffle all, Continue unseen, Practice by Domain, Flashcard reset) only stop and zero the elapsed time, preserving the user's custom mode/target (e.g. a 45-min countdown stays a 45-min countdown). Exam start (`startSimTest`) is unaffected, it always force-sets its own 90-min countdown.
 
 ---
 
@@ -103,7 +104,6 @@ if(S.mode==='mcq' && !S.simExamActive && S.mcqOrd.length === M.length && S.simEx
 
 ## Known Deferred Items
 
-- Reset All Progress does not reset timer state (`timerElapsed`, `timerTarget`, `timerRunning`, `timerMode`) - easy fix, batch into next release
 - Manual dark/light mode toggle (sun/moon icon) - currently follows system preference only
 - Collapse/expand for keyboard shortcut reference - low priority
 - Skip button during exam - future phase
@@ -131,4 +131,4 @@ Em-dashes (`—`) are banned throughout all code, UI strings, and docs. Use regu
 
 ## Bumping STATE_VERSION
 
-Bump `STATE_VERSION` whenever a change would cause stale localStorage state to produce wrong behavior. This wipes existing user progress on load - use judiciously. Current: 47.
+Bump `STATE_VERSION` whenever a change would cause stale localStorage state to produce wrong behavior. This wipes existing user progress on load - use judiciously. Current: 48.

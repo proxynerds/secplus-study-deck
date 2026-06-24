@@ -39,6 +39,7 @@ Current shipped file: `secplus_SY0-701_study_deck.html`
 - One genuine exact-duplicate question found and removed from the original 784-question pool via systematic fuzzy-match dedup pass
 - Keyboard ArrowRight not working while viewing history (only called `nxt()`, never `nextQ()`)
 - Flag button incorrectly hidden while viewing history
+- Reset All Progress (and the lighter practice resets) leaving a stale `timerInterval` running, which kept ticking and persisting elapsed time against the just-reset state - fixed by clearing the interval in `resetAll`/`startNewRun`/`startDomainRun`/`startNewVocabRun`; Reset Everything now restores full timer defaults, the lighter resets stop/zero elapsed while preserving the user's custom mode/target
 
 ---
 
@@ -76,7 +77,6 @@ Current shipped file: `secplus_SY0-701_study_deck.html`
 - Settings visible-but-grayed during exam (vs current full lockout) - future phase enhancement, out of scope now
 - "Simulate again" shortcut on Practice or Review page - easy, future phase
 - Manual dark/light mode toggle (sun/moon icon) - currently the app follows system preference only; an in-app override would let users switch without changing OS settings. Easy to add.
-- **Bug: Reset All Progress does not reset the timer** - `timerElapsed`, `timerTarget`, `timerRunning`, and `timerMode` are not cleared by the full reset. Should reset to default state (count-up, zeroed). Batch into next release.
 
 ---
 
