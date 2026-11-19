@@ -2,13 +2,20 @@
 
 A standalone, offline HTML study app for the CompTIA Security+ SY0-701 exam. One file, no installation, no internet required - open it in any browser and start studying.
 
+**Use it now:** [proxynerds.github.io/secplus-study-deck](https://proxynerds.github.io/secplus-study-deck/secplus_SY0-701_study_deck.html)
+
 ---
 
 ## Getting Started
 
-Download `secplus_SY0-701_study_deck.html` and open it in any modern browser. No setup, no account, no internet connection needed. Your progress saves automatically in your browser's local storage and persists between sessions.
+There are two ways to use the study deck:
 
-If you study on multiple devices or browsers, progress does not sync between them - each browser keeps its own independent record.
+1. **Straight from the web** - open [proxynerds.github.io/secplus-study-deck](https://proxynerds.github.io/secplus-study-deck/secplus_SY0-701_study_deck.html) in any modern browser. Nothing to download, nothing to install.
+2. **Download and run locally** - grab `secplus_SY0-701_study_deck.html` from this repo and open it directly in your browser. Works fully offline with no internet connection needed after download.
+
+Either way, no setup and no account are required, and your progress saves automatically in your browser's local storage and persists between sessions.
+
+If you study on multiple devices or browsers (or switch between the hosted and local copy), progress does not sync between them - each browser keeps its own independent record.
 
 ---
 
